@@ -54,8 +54,7 @@ public class Main {
     }
 
     public static void printLuaChon() {
-        System.out.println("Ứng dụng quản lý thư viện");
-        System.out.println("Bạn muốn làm gì : ");
+        System.out.println("==============Quản lý thư viện==============");
         System.out.println("1. Danh sách các đầu sách trong thư viện.");
         System.out.println("2. Danh sách người thuê sách.");
         System.out.println("3. Thêm sách vào thư viện.");
