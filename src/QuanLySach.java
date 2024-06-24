@@ -47,9 +47,9 @@ public class QuanLySach {
             int soLuongThucTe;
 
             System.out.print("Nhập tên sách : ");
-            tenSach += sc.next();
+            tenSach = sc.nextLine();
             System.out.print("Nhập tên tác giả : ");
-            tenTacGia += sc.next();
+            tenTacGia = sc.nextLine();
             System.out.print("Nhập số lượng : ");
             soLuongThucTe = Integer.parseInt(sc.next());
 
@@ -66,7 +66,7 @@ public class QuanLySach {
         }
 
         if(sachMoi == null) return;
-        sachMoi.inThongTinSach();
+        inDanhSachSach();
     }
 
     public void printLuaChonSuaSach() {
