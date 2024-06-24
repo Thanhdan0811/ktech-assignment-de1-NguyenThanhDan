@@ -1,6 +1,3 @@
-import javax.swing.text.DateFormatter;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Main {
@@ -11,17 +8,6 @@ public class Main {
 
         QuanLySach qLSach = new QuanLySach();
         QuanLyNguoiThue qLNgThue = new QuanLyNguoiThue();
-
-        DateTimeFormatter df = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-
-        LocalDate dateThue = LocalDate.now();
-        LocalDate dateTra = LocalDate.parse("23/06/2024", df);
-
-        int checkDate = dateTra.compareTo(dateThue);
-
-        System.out.println("SO sánh ngày : " + checkDate);
-
-        System.out.println("Ngafyyyyy : " + dateThue.format(df));
 
         while (true) {
             System.out.println();

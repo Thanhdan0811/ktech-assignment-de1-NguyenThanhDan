@@ -50,10 +50,6 @@ public class NguoiThue {
         this.tuoi = tuoi;
     }
 
-    public void setNgayTra(String ngayTra) {
-        this.ngayTra = ngayTra;
-    }
-
     public String getNgayThue() {
         return ngayThue;
     }
