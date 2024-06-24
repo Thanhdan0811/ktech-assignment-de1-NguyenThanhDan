@@ -10,14 +10,13 @@ public class QuanLyNguoiThue {
         this.listNguoiThue = new ArrayList<>();
     }
 
-    public void themNguoiThue(QuanLySach qlSach) {
-
+    public void themNguoiThue(QuanLySach qlSach, Scanner sc) {
+        sc.skip("\n");
         if(qlSach.getListSach().isEmpty()) {
             System.out.println("Hiện tại thư viện không có sách để thuê");
             return;
         }
 
-        Scanner sc = new Scanner(System.in);
         String tenNgThue;
         int tuoiNgThue;
         String ngayThue;
@@ -28,7 +27,7 @@ public class QuanLyNguoiThue {
         Sach sachThue;
 
         System.out.print("Nhập tên người thuê: ");
-        tenNgThue = sc.next();
+        tenNgThue = sc.nextLine();
 
         System.out.print("Nhập tuổi người thuê: ");
         tuoiNgThue = sc.nextInt();
@@ -94,13 +93,14 @@ public class QuanLyNguoiThue {
 
     }
 
-    public void doiThongTinNguoiThue() {
-        Scanner sc = new Scanner(System.in);
+    public void doiThongTinNguoiThue(Scanner sc) {
         String tenNgThue;
+
         int tuoiNgThue;
         NguoiThue ngThue;
 
         while (true) {
+            sc.skip("\n");
             System.out.print("Nhập mã người thuê,(nhập 0 để thoát) :");
             int maNguoiThue = sc.nextInt();
 
@@ -115,6 +115,7 @@ public class QuanLyNguoiThue {
         }
 
         while (true) {
+            sc.skip("\n");
             System.out.println("Bạn muốn thay đổi thông tin nào");
             System.out.println("1. Tên người thuê");
             System.out.println("2. Tuổi người thuê");
@@ -163,10 +164,10 @@ public class QuanLyNguoiThue {
         }
     }
 
-    public void traSachThue() {
-        Scanner sc = new Scanner(System.in);
+    public void traSachThue(Scanner sc) {
         NguoiThue ngThue;
         while (true) {
+            sc.skip("\n");
             System.out.print("Nhập mã người thuê,(nhập 0 để thoát) :");
             int maNguoiThue = sc.nextInt();
 

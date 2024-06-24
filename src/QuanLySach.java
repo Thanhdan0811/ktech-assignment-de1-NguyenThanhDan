@@ -38,10 +38,10 @@ public class QuanLySach {
         }
     }
 
-    public void printLuaChonThemSach() {
-        Scanner sc = new Scanner(System.in);
+    public void printLuaChonThemSach(Scanner sc) {
         Sach sachMoi;
         while (true) {
+            sc.skip("\n");
             String tenSach="";
             String tenTacGia = "";
             int soLuongThucTe;
@@ -51,7 +51,7 @@ public class QuanLySach {
             System.out.print("Nhập tên tác giả : ");
             tenTacGia = sc.nextLine();
             System.out.print("Nhập số lượng : ");
-            soLuongThucTe = Integer.parseInt(sc.next());
+            soLuongThucTe = sc.nextInt();
 
             sachMoi = this.themSach(tenSach, tenTacGia, soLuongThucTe);
             System.out.println("Bạn đã thêm sách");
@@ -64,23 +64,24 @@ public class QuanLySach {
             break;
 
         }
-
+//        sc.close();
         if(sachMoi == null) return;
         inDanhSachSach();
     }
 
-    public void printLuaChonSuaSach() {
-        Scanner sc = new Scanner(System.in);
+    public void printLuaChonSuaSach(Scanner sc) {
+        sc.skip("\n");
         System.out.println("Nhập mã sách bạn muốn chỉnh sửa : ");
         int maSach = sc.nextInt();
 
         Sach sachCanSua = timSachBangMaSach(maSach);
         if(sachCanSua == null) {
-            System.out.println("Vị trí sách bạn nhập không tồn tại");
+            System.out.println("Mã sách bạn nhập không tồn tại");
             return;
         }
 
         while (true) {
+            sc.skip("\n");
             Scanner newSc = new Scanner(System.in);
 
             System.out.println("Sách cần chỉnh sửa là : ");
@@ -97,25 +98,25 @@ public class QuanLySach {
             int soLuongMoi;
             switch (luaChon) {
                 case 1:
-                    System.out.println("nhập tên sách mới");
+                    System.out.print("nhập tên sách mới");
                     tenMoiHoacTacGiaMoi = newSc.next();
                     sachCanSua.setTenSach(tenMoiHoacTacGiaMoi);
                     System.out.println("Cập nhật thành công");
                     return;
                 case 2:
-                    System.out.println("nhập tên tác giả mới");
+                    System.out.print("nhập tên tác giả mới");
                     tenMoiHoacTacGiaMoi = newSc.next();
                     sachCanSua.setTenTacGia(tenMoiHoacTacGiaMoi);
                     System.out.println("Cập nhật thành công");
                     return;
                 case 3:
-                    System.out.println("nhập số lượng mới");
+                    System.out.print("nhập số lượng mới");
                     soLuongMoi = newSc.nextInt();
                     sachCanSua.setSoLuongThucTe(soLuongMoi);
                     System.out.println("Cập nhật thành công");
                     return;
                 default:
-                    System.out.println("Mời bạn chọn lại");
+                    System.out.println("Vui lòng chọn lại");
 
             }
 
@@ -124,9 +125,9 @@ public class QuanLySach {
 
     }
 
-    public void printXoaSach() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Nhập số thứ tự bạn mún xóa");
+    public void printXoaSach(Scanner sc) {
+        sc.skip("\n");
+        System.out.println("Nhập mã sách bạn mún xóa");
         int maSach = sc.nextInt();
 
         Sach sach = timSachBangMaSach(maSach);

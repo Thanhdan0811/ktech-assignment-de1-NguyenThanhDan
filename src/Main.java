@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         // In ra lựa chọn
         Scanner sc = new Scanner(System.in);
-        int luaChon = 0;
+        int luaChon;
 
         QuanLySach qLSach = new QuanLySach();
         QuanLyNguoiThue qLNgThue = new QuanLyNguoiThue();
@@ -24,22 +24,23 @@ public class Main {
                     qLNgThue.danhSachNguoiThue();
                     break;
                 case 3:
-                    qLSach.printLuaChonThemSach();
+//                    sc.;
+                    qLSach.printLuaChonThemSach(sc);
                     break;
                 case 4:
-                    qLSach.printLuaChonSuaSach();
+                    qLSach.printLuaChonSuaSach(sc);
                     break;
                 case 5:
-                    qLSach.printXoaSach();
+                    qLSach.printXoaSach(sc);
                     break;
                 case 6:
-                    qLNgThue.themNguoiThue(qLSach);
+                    qLNgThue.themNguoiThue(qLSach, sc);
                     break;
                 case 7:
-                    qLNgThue.doiThongTinNguoiThue();
+                    qLNgThue.doiThongTinNguoiThue(sc);
                     break;
                 case 8:
-                    qLNgThue.traSachThue();
+                    qLNgThue.traSachThue(sc);
                     break;
                 default:
                     System.out.println("Lựa chọn của bạn không phù hợp");

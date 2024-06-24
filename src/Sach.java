@@ -36,7 +36,7 @@ public class Sach {
     }
 
     public void inThongTinSach() {
-        System.out.println("Sách " + this.getTenSach() + " của tác giả " + this.getTenTacGia() + " hiện có  " + this.getSoLuongThucTe() + " trong thư viện");
+        System.out.println("Tên: " + this.getTenSach() + " tác giả: " + this.getTenTacGia() + " số lượng: " + this.getSoLuongThucTe() + " quyển");
     }
 
     public int getMaSach() {
